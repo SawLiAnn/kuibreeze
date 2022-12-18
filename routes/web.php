@@ -6,6 +6,7 @@ use App\Http\Controllers\HomeController;
 use App\Http\Controllers\RoleController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\ProjectController;
+use App\Http\Controllers\homeControl;
 /*
 |--------------------------------------------------------------------------
 | Web Routes
@@ -17,9 +18,11 @@ use App\Http\Controllers\ProjectController;
 |
 */
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return view('welcome');
+// });
+
+Route::get("/",[homeControl::class,"index"]);
 
 Route::get('/dashboard', function () {
     return view('dashboard');
