@@ -5,15 +5,23 @@
 3. composer update
 4. php artisan key:generate 
 5. php artisan migrate
-6. php artisan db:seed --class=PermissionTableSeeder
-7. php artisan db:seed --class=CreateAdminUserSeeder
-8. php artisan serve
+6. php artisan db:seed --class=RolesAndPermissionsSeeder
+7. php artisan serve
 
 Access By: 
 http://localhost:8000/
 
 Login with following credential:
-Email: admin@gmail.com
+# FYP Coordinator
+Email: fannie@gmail.com
+Password: 123456
+
+# Lecturer
+Email: chong@gmail.com
+Password: 123456
+
+# Student
+Email: ahhock@gmail.com
 Password: 123456
 
 ## CSEB5123 Advanced Web Application Development

@@ -1,7 +1,11 @@
 <main class="flex flex-col items-center flex-1 px-4 pt-6 sm:justify-center">
     <div>
-        <a href="/">
+        {{-- <a href="/">
+            <i class="fa fa-pencil"></i>
             <x-application-logo class="w-20 h-20" />
+        </a> --}}
+        <a href="/" class="logo">
+            <img src="assets/img/klassy-logo.png" align="klassy cafe html template">
         </a>
     </div>
 

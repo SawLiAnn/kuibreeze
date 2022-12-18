@@ -56,13 +56,9 @@
         'translate-y-full': scrollingDown,
         'translate-y-0': scrollingUp,
     }">
-    <x-button type="button" iconOnly variant="secondary" srText="Search">
-        <x-heroicon-o-search aria-hidden="true" class="w-6 h-6" />
-    </x-button>
 
-    <a href="{{ route('dashboard') }}">
+    <a href="{{ route('projects.index') }}">
         <x-application-logo aria-hidden="true" class="w-10 h-10" />
-        <span class="sr-only">K UI</span>
     </a>
 
     <x-button type="button" iconOnly variant="secondary" srText="Open main menu"

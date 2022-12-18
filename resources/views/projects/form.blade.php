@@ -1,4 +1,4 @@
-@if(Auth::user()->hasRole('Admin')|| Auth::id()==$project->supervisor)
+@if(Auth::user()->hasRole('FYP Coordinator')|| Auth::id()==$project->supervisor)
 
 <div class="row">
     <div class="col-xs-12 col-sm-12 col-md-12">
