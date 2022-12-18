@@ -46,61 +46,63 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::create(['name' => 'Student'])->givePermissionTo(['project-list']);
         $role = Role::create(['name' => 'Public'])->givePermissionTo(['project-list']);
 
-        $role = Role::where('name', 'FYP Coordinator')->first();
+        $role1 = Role::where('name', 'FYP Coordinator')->first();
         $user = User::create([
             'name' => 'Fannie', 
             'email' => 'fannie@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role1);
+        // $user1->assignRole()->where('name', 'FYP Coordinator');
 
-        $role = Role::where('name', 'Lecturer')->first();
+        $role2 = Role::where('name', 'Lecturer')->first();
         $user = User::create([
             'name' => 'Dr. Chong', 
             'email' => 'chong@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]);
+        $user->assignRole($role2);
+        // $user2->assignRole()->where('name', 'Lecturer');
 
-        $role = Role::where('name', 'Lecturer')->first();
+        // $role3 = Role::where('name', 'Lecturer')->first();
         $user = User::create([
             'name' => 'Dr. Lim', 
             'email' => 'lim@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role2);
 
-        $role = Role::where('name', 'Lecturer')->first();
+        // $role = Role::where('name', 'Lecturer')->first();
         $user = User::create([
             'name' => 'Dr. Tan', 
             'email' => 'tan@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role2);
 
-        $role = Role::where('name', 'Student')->first();
+        $role3 = Role::where('name', 'Student')->first();
         $user = User::create([
             'name' => 'Ali', 
             'email' => 'ali@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role3);
 
-        $role = Role::where('name', 'Student')->first();
+        // $role = Role::where('name', 'Student')->first();
         $user = User::create([
             'name' => 'Muthu', 
             'email' => 'muthu@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role3);
         
-        $role = Role::where('name', 'Student')->first();
+        // $role = Role::where('name', 'Student')->first();
         $user = User::create([
             'name' => 'Ah Hock', 
             'email' => 'ahhock@gmail.com',
             'password' => bcrypt('123456')
-        ])->first(); 
-        $user->assignRole($role);
+        ]); 
+        $user->assignRole($role3);
 
     }
 }
