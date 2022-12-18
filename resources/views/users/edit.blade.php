@@ -2,7 +2,7 @@
     <x-slot name="header">
         <div class="flex flex-col gap-4 md:flex-row md:items-center md:justify-between">
             <h2 class="text-xl font-semibold leading-tight">
-                Edit New User
+                Edit User
             </h2>
             <div class="float-right">
                 <a class="btn btn-primary" href="{{ route('users.index') }}">Back</a>

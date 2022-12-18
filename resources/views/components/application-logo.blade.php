@@ -1,1 +1,1 @@
-<img src="assets/img/klassy-logo.png" class="center">
+<img src="{{url('/assets/img/klassy-logo.png')}}" class="center">

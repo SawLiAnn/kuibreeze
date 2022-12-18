@@ -5,7 +5,7 @@
             <x-application-logo class="w-20 h-20" />
         </a> --}}
         <a href="/" class="logo">
-            <img src="assets/img/klassy-logo.png" align="klassy cafe html template">
+            <img src="{{url('/assets/img/klassy-logo.png')}}" align="klassy cafe html template">
         </a>
     </div>
 

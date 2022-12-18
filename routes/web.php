@@ -24,30 +24,6 @@ use App\Http\Controllers\homeControl;
 
 Route::get("/",[homeControl::class,"index"]);
 
-Route::get('/dashboard', function () {
-    return view('dashboard');
-})->middleware(['auth', 'verified'])->name('dashboard');
-
-// Route::get('/project', function () {
-//     return view('project');
-// })->middleware(['auth', 'verified'])->name('project');
-
-// useless routes
-// Just to demo sidebar dropdown links active states.
-Route::get('/buttons/text', function () {
-    return view('buttons-showcase.text');
-})->middleware(['auth'])->name('buttons.text');
-
-Route::get('/buttons/icon', function () {
-    return view('buttons-showcase.icon');
-})->middleware(['auth'])->name('buttons.icon');
-
-Route::get('/buttons/text-icon', function () {
-    return view('buttons-showcase.text-icon');
-})->middleware(['auth'])->name('buttons.text-icon');
-
-// Route::resource('projects', ProjectController::class);
-
 Route::group(['middleware' => ['auth']], function() {
     Route::resource('roles', RoleController::class);
     Route::get('roles/del/{id}',[RoleController::class, 'destroy']);
@@ -60,8 +36,6 @@ Route::group(['middleware' => ['auth']], function() {
 });
 
 require __DIR__ . '/auth.php';
-///////////  
-  
-// Route::get('/home', [HomeController::class, 'index'])->name('home');
+
   
 
