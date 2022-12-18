@@ -12,7 +12,7 @@
 Access By: 
 http://localhost:8000/
 
-Now you may login with following credential:
+Login with following credential:
 Email: admin@gmail.com
 Password: 123456
 
