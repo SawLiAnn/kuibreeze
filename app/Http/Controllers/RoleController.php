@@ -34,7 +34,7 @@ class RoleController extends Controller
         // $a=Role::all();
         // return view('adminPage',['b'=>$a]);
         
-        $roles = Role::orderBy('id','DESC')->paginate(5);
+        $roles = Role::orderBy('id','ASC')->paginate(5);
         return view('roles.index',['roles'=>$roles])
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }

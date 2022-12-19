@@ -5,7 +5,8 @@ namespace App\Http\Controllers;
 use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
-
+use Spatie\Permission\Models\Permission;
+  
 class ProjectController extends Controller
 { 
     /**
