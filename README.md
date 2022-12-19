@@ -1,4 +1,4 @@
-## To Run This Project: 
+# To Run This Project: 
 
 1. Download or clone this project
 2. Rename .env.example to .env 
@@ -12,15 +12,15 @@ Access By:
 http://localhost:8000/
 
 Login with following credential:
-# FYP Coordinator
+### FYP Coordinator
 Email: fannie@gmail.com
 Password: 123456
 
-# Lecturer
+### Lecturer
 Email: chong@gmail.com
 Password: 123456
 
-# Student
+### Student
 Email: ahhock@gmail.com
 Password: 123456
 
