@@ -58,9 +58,11 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Student'))
                 <option value="{{ $user->id }}" @if(old('student')==$user->id || $user->id==$project->student) selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -76,9 +78,11 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Student'))
                 <option value="{{ $user->id }}" @if(old('student')==$user->id || $user->id==$project->student) selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -99,10 +103,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('supervisor')==$user->id || $user->id==$project->supervisor)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -118,10 +124,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('supervisor')==$user->id || $user->id==$project->supervisor)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -142,10 +150,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner1')==$user->id || $user->id==$project->examiner1)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -161,10 +171,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner1')==$user->id || $user->id==$project->examiner1)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -185,10 +197,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner2')==$user->id || $user->id==$project->examiner2)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -204,10 +218,12 @@
                 @endforeach
                 @else
                 @foreach($users as $user)
+                @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner2')==$user->id || $user->id==$project->examiner2)
                     selected
                     @endif>{{ $user->name }}
                 </option>
+                @endif
                 @endforeach
                 @endif
             </select>
@@ -217,8 +233,7 @@
     </div>
     @endif
 
-
-    @if(Auth::id()==$project->supervisor)
+    @if(Auth::user()->hasRole('Lecturer') && Auth::id()==$project->supervisor)
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
             <strong>Start Date:</strong><br>

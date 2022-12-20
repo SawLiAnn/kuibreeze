@@ -1,10 +1,9 @@
 ## CSEB5123 Advanced Web Application Development
 
-This project utilised the following packages: -
+This project utilised the following templates and package: -
 1. KlassyCafé (https://templatemo.com/)
-2. Breeze Package (https://github.com/laravel/breeze)
-3. K UI Admin Dashboard Template (https://github.com/kamona-ui/kui-dashboard-html)
-4. Spatie Roles and Permissions Package (https://spatie.be/docs/laravel-permission/v5/basic-usage/basic-usage)
+2. K UI Admin Dashboard Template (https://github.com/kamona-ui/kui-dashboard-html)
+3. Breeze Package (https://github.com/laravel/breeze)
 
 ## To Run This Project: 
 

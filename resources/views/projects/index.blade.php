@@ -106,10 +106,13 @@
                 @endif
 
             <td>
+                @if(Auth::user()->hasRole('FYP Coordinator') || Auth::id()==$project->supervisor)
                 @can('project-edit')
                 <a class="btn btn-primary" href="{{ route('projects.edit',$project->id) }}"><i
                         class="fa fa-pencil"></i></a>
                 @endcan
+                @endif
+
                 @can('project-delete')
                 <a class="btn btn-danger" onclick="return confirm('Are you sure?')" href="{{"
                     projects/del/".$project['id']}}"><i class="fa fa-trash"></i></a>

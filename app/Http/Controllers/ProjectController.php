@@ -6,7 +6,8 @@ use App\Models\Project;
 use Illuminate\Http\Request;
 use App\Models\User;
 use Spatie\Permission\Models\Permission;
-  
+use Illuminate\Support\Facades\Auth;
+
 class ProjectController extends Controller
 { 
     /**
@@ -29,7 +30,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::latest()->paginate(5);
+        $project = Project::orderBy('id','ASC')->paginate(5);
         $user =User::all();
         return view('projects.index',['projects'=>$project, 'users'=>$user])
             ->with('i', (request()->input('page', 1) - 1) * 5);
@@ -104,6 +105,7 @@ class ProjectController extends Controller
      */
     public function update(Request $request, Project $project)
     {
+        if(Auth::user()->hasRole('FYP Coordinator')){
         request()->validate([
             'project_type' => 'required',
             'project_name' => 'required',
@@ -111,13 +113,16 @@ class ProjectController extends Controller
             'supervisor'   => 'required|different:examiner1|different:examiner2',
             'examiner1'    => 'required|different:examiner2',
             'examiner2'    => 'required',
+        ]);
+        }elseif(Auth::user()->hasRole('Lecturer') && Auth::id()==$project->supervisor){
+        request()->validate([
             'start_date'   => 'required|date',
             'end_date'     => 'required|date|after_or_equal:start_date',
             'duration'     => 'required',
             'project_progress'    => 'required',
             'project_status'      => 'required',
         ]);
-    
+        }  
         $project->update($request->all());
     
         return redirect()->route('projects.index')

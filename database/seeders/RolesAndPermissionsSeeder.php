@@ -42,7 +42,7 @@ class RolesAndPermissionsSeeder extends Seeder
         $role = Role::create(['name' => 'FYP Coordinator']);
         $role->givePermissionTo(Permission::all());
         
-        $role = Role::create(['name' => 'Lecturer'])->givePermissionTo(['project-list']);
+        $role = Role::create(['name' => 'Lecturer'])->givePermissionTo(['project-list','project-edit']);
         $role = Role::create(['name' => 'Student'])->givePermissionTo(['project-list']);
         $role = Role::create(['name' => 'Public'])->givePermissionTo(['project-list']);
 
