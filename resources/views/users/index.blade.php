@@ -25,6 +25,7 @@
             <th>No</th>
             <th>Name</th>
             <th>Email</th>
+            <th>Student ID / Staff ID</th>
             <th>Roles</th>
             <th width="280px">Action</th>
         </tr>
@@ -33,6 +34,7 @@
             <td>{{ ++$i }}</td>
             <td>{{ $c->name }}</td>
             <td>{{ $c->email }}</td>
+            <td>{{ $c->student_staff_id }}</td>
             <td>
                 @if(!empty($c->getRoleNames()))
                 @foreach($c->getRoleNames() as $v)

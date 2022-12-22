@@ -26,7 +26,7 @@ class UserController extends Controller
      */
     public function index(Request $request)
     {
-        $data = User::orderBy('id','ASC')->paginate(5);
+        $data = User::orderBy('id','DESC')->paginate(5);
         return view('users.index',['data'=>$data])
             ->with('i', ($request->input('page', 1) - 1) * 5);
     }
@@ -54,6 +54,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email',
             'password' => 'required|same:confirm-password',
+            'student_staff_id' => 'nullable|unique:users,student_staff_id',
             'roles' => 'required'
         ]);
     
@@ -95,6 +96,7 @@ class UserController extends Controller
             'name' => 'required',
             'email' => 'required|email|unique:users,email,'.$id,
             'password' => 'same:confirm-password',
+            'student_staff_id' => 'nullable|unique:users,student_staff_id,'.$id,
             'roles' => 'required'
         ]);
     

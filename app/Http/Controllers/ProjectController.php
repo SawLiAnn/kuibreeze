@@ -30,7 +30,7 @@ class ProjectController extends Controller
      */
     public function index()
     {
-        $project = Project::orderBy('id','ASC')->paginate(5);
+        $project = Project::orderBy('id','DESC')->paginate(5);
         $user =User::all();
         return view('projects.index',['projects'=>$project, 'users'=>$user])
             ->with('i', (request()->input('page', 1) - 1) * 5);
