@@ -53,14 +53,23 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Student'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
                 @foreach($users as $user)
                 @if($user->hasRole('Student'))
                 <option value="{{ $user->id }}" @if(old('student')==$user->id || $user->id==$project->student) selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -73,14 +82,23 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Student'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
                 @foreach($users as $user)
                 @if($user->hasRole('Student'))
                 <option value="{{ $user->id }}" @if(old('student')==$user->id || $user->id==$project->student) selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -98,7 +116,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -106,7 +129,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('supervisor')==$user->id || $user->id==$project->supervisor)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -119,7 +146,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -127,7 +159,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('supervisor')==$user->id || $user->id==$project->supervisor)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -145,7 +181,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -153,7 +194,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner1')==$user->id || $user->id==$project->examiner1)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -166,7 +211,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -174,7 +224,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner1')==$user->id || $user->id==$project->examiner1)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -192,7 +246,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -200,7 +259,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner2')==$user->id || $user->id==$project->examiner2)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
@@ -213,7 +276,12 @@
                 <option value="" selected="true" disabled="disabled">Choose Option</option>
                 @foreach($users as $user)
                 @if($user->hasRole('Lecturer'))
-                <option value="{{ $user->id }}">{{ $user->name }}</option>
+                <option value="{{ $user->id }}">
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
+                </option>
                 @endif
                 @endforeach
                 @else
@@ -221,7 +289,11 @@
                 @if($user->hasRole('Lecturer'))
                 <option value="{{ $user->id }}" @if(old('examiner2')==$user->id || $user->id==$project->examiner2)
                     selected
-                    @endif>{{ $user->name }}
+                    @endif>
+                    @if(is_null($user->student_staff_id)){{ $user->name }}
+                    @else
+                    {{ $user->name }} ({{ $user->student_staff_id }})
+                    @endif
                 </option>
                 @endif
                 @endforeach
