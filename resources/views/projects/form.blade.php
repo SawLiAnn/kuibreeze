@@ -248,7 +248,7 @@
     </div>
     <div class="col-xs-12 col-sm-12 col-md-12">
         <div class="form-group">
-            <strong>Duration:</strong>
+            <strong>Duration (Month):</strong>
             <input type="number" name="duration" class="form-control" placeholder="Duration"
                 value="{{old('duration', $project->duration)}}" required>
         </div>
