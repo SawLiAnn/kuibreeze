@@ -46,7 +46,10 @@
                 @else
                 @foreach($users as $user)
                 @if($user->id == $project->student)
-                {{ $user->name }}
+                @if(is_null($user->student_staff_id)){{ $user->name }}
+                @else
+                {{ $user->name }} ({{ $user->student_staff_id }})
+                @endif
                 @endif
                 @endforeach
                 @endif
